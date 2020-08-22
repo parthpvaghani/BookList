@@ -11,8 +11,8 @@ class App extends React.Component {
       bookTitle: '',
       bookAuthor: '',
       bookISBN: '',
-      emptyFieldError:'',
-      successAlert:'',
+      emptyFieldError: '',
+      successAlert: '',
       bookList: []
     }
     this.handlesubmit = this.handlesubmit.bind(this);
@@ -22,18 +22,18 @@ class App extends React.Component {
 
   handlesubmit(e) {
     e.preventDefault();
-    const newBookList = [...this.state.bookList, {bookTitle: this.state.bookTitle, bookAuthor: this.state.bookAuthor, bookISBN: this.state.bookISBN }]
-    if(this.state.bookTitle==='' || this.state.bookISBN==='' || this.state.bookAuthor===''){
-          this.setState({
-            emptyFieldError:'Please Fill All Fields',
-            successAlert:'',
-
-          })
-    }
-    else{
+    const newBookList = [...this.state.bookList, { bookTitle: this.state.bookTitle, bookAuthor: this.state.bookAuthor, bookISBN: this.state.bookISBN }]
+    if (this.state.bookTitle === '' || this.state.bookISBN === '' || this.state.bookAuthor === '') {
       this.setState({
-        successAlert:'Data Submitted',
-        emptyFieldError:'',
+        emptyFieldError: 'Please Fill All Fields',
+        successAlert: '',
+
+      })
+    }
+    else {
+      this.setState({
+        successAlert: 'Data Submitted',
+        emptyFieldError: '',
         bookList: newBookList
       })
     }

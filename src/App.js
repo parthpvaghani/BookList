@@ -14,6 +14,7 @@ class App extends React.Component {
       bookISBN: '',
       emptyFieldError:'',
       successAlert:'',
+      isinEditMode:false,
       bookList: []
     }
     this.handlesubmit = this.handlesubmit.bind(this);
@@ -55,15 +56,17 @@ class App extends React.Component {
   }
 
   handleEdit(key) {
-    
+    this.setState({
+      isinEditMode:!this.state.isinEditMode,
+      rowId:key
+    })
   }
 
   render() {
     return (
-
       <div className="App">
         <Header />
-        <BookList handlesubmit={this.handlesubmit} emptyFieldError={this.state.emptyFieldError} handleinput={this.handleinput} bookList={this.state.bookList} successAlert={this.state.successAlert} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
+        <BookList handlesubmit={this.handlesubmit} emptyFieldError={this.state.emptyFieldError} handleinput={this.handleinput} bookList={this.state.bookList} successAlert={this.state.successAlert} handleDelete={this.handleDelete} handleEdit={this.handleEdit} isinEditMode={this.state.isinEditMode} />
       </div>
     );
   }

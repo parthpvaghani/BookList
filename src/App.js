@@ -19,8 +19,7 @@ class App extends React.Component {
     this.handlesubmit = this.handlesubmit.bind(this);
     this.handleinput = this.handleinput.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-
-
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handlesubmit(e) {
@@ -37,6 +36,7 @@ class App extends React.Component {
       this.setState({
         successAlert:'Data Submitted',
         emptyFieldError:'',
+        key:Date.now(),
         bookList: newBookList
       })
     }
@@ -54,12 +54,16 @@ class App extends React.Component {
     })
   }
 
+  handleEdit(key) {
+    
+  }
+
   render() {
     return (
 
       <div className="App">
         <Header />
-        <BookList handlesubmit={this.handlesubmit} emptyFieldError={this.state.emptyFieldError} handleinput={this.handleinput} bookList={this.state.bookList} successAlert={this.state.successAlert} handleDelete={this.handleDelete}/>
+        <BookList handlesubmit={this.handlesubmit} emptyFieldError={this.state.emptyFieldError} handleinput={this.handleinput} bookList={this.state.bookList} successAlert={this.state.successAlert} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
       </div>
     );
   }

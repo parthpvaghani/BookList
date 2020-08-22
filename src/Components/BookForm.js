@@ -7,7 +7,7 @@ function BookForm(props) {
                 <div className="container">
                         <FormGroup>
                             <Label for="bookTitle">Title</Label>
-                            <Input type="text" id="bookTitle" name="bookTitle" onChange={props.handleinput} />
+                            <Input type="text" id="bookTitle" name="bookTitle" onChange={props.handleinput}  />
                         </FormGroup>
                         <FormGroup>
                             
@@ -20,7 +20,8 @@ function BookForm(props) {
                         <Input type="text" id="bookISBN" name="bookISBN" onChange={props.handleinput}/>
                         </FormGroup>
                         <Button type="submit" color="primary">SUBMIT</Button><br/>
-                        <Badge color="danger">{props.emptyFieldError}</Badge>
+                        
+                        <Badge color="danger">{ props.emptyFieldError}</Badge>
                         <Badge color="success">{props.successAlert}</Badge>
                 </div>
             </Form>

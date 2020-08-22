@@ -25,7 +25,7 @@ function BookList(props) {
                                     <td>{book.bookTitle}</td>
                                     <td>{book.bookAuthor}</td>
                                     <td>{book.bookISBN}</td>
-                                    <td><Button onClick={()=>{props.handleDelete(book.key)}}>Delete</Button></td>
+                                    <td><Button onClick={()=>{props.handleDelete(book.key)}}>Delete</Button><Button className="ml-1" onClick={()=>{props.handleEdit()}}>Edit</Button></td>
                                     </tr>
                             )
                             })
